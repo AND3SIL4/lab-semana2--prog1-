@@ -17,4 +17,39 @@
 package classes;
 
 public class OperadoresAritmeticos {
+  //Main method to run the steps
+  public static void main(){
+    System.out.println("Operadores Artimeticos");
+    presupuestoUniversidad();
+  }
+
+  public static void presupuestoUniversidad(){
+    //Declarate the constant and initial variables
+    final int totalPresupuesto = 64738;
+    final String[] areas = {"investigaciones", "deportes", "equipamiento"};
+    final int totalAreas = areas.length;
+
+    //Get to investiment amount per area
+    int montoPorArea = totalPresupuesto / totalAreas;
+    int montoRestante = totalPresupuesto % totalAreas;
+
+    //Results to local money (Colombian pesos)
+    double resultMontoPerArea = calculateColombianPesos(montoPorArea);
+    double resultMontoRestante = calculateColombianPesos(montoRestante);
+
+    //Show info and results
+    System.out.println("El monto de inversion para cada area es: " + montoPorArea);
+    //Validate if the rest amount exits or not
+    if (montoRestante > 0){
+      System.out.println("El monto sobrante de inversion es: " + montoRestante);
+    }
+    //Convert to local money
+    System.out.println("El monto de inversion para cada area en pesos colombianos es: " + resultMontoPerArea + " COP");
+    System.out.println("El monto de inversion restante en pesos colombianos es: " + resultMontoRestante + " COP");
+  }
+
+  public static double calculateColombianPesos(double amount){
+    double tasaCambio = 3927;
+    return amount * tasaCambio;
+  }
 }
