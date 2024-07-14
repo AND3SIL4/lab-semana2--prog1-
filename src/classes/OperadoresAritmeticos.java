@@ -21,8 +21,10 @@ public class OperadoresAritmeticos {
   public static void main(){
     System.out.println("Operadores Artimeticos");
     presupuestoUniversidad();
+    velocidadAuto();
   }
 
+  //Primer inciso
   public static void presupuestoUniversidad(){
     //Declarate the constant and initial variables
     final int totalPresupuesto = 64738;
@@ -51,5 +53,20 @@ public class OperadoresAritmeticos {
   public static double calculateColombianPesos(double amount){
     double tasaCambio = 3927;
     return amount * tasaCambio;
+  }
+
+  //Segundo inciso
+  public static void velocidadAuto() {
+    // Distancia en metros
+    double distancia = 620000; // 620 km = 620,000 m
+
+    // Tiempo en minutos
+    double tiempo = 8 * 60; // 8 horas = 480 minutos
+
+    // Calcular la velocidad en metros por minuto
+    double velocidad = distancia / tiempo;
+
+    // Imprimir la velocidad
+    System.out.println("La velocidad del automóvil es: " + velocidad + " metros por minuto.");
   }
 }
